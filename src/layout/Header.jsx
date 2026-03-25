@@ -1,6 +1,12 @@
 import { Menu } from "lucide-react"
+import { assets } from "../assets/assets"
+import { useDispatch } from "react-redux"
+import { useGetMeQuery } from "../features/auth/authApi"
+import { useCurrentuser } from "../features/auth/hooks/useCurrentUser"
 
-const Header = ({ setIsOpen }) => {
+const Header = () => {
+   const {currentUser} = useCurrentuser();
+
   return (
     <header className="h-16 bg-white shadow flex items-center justify-between px-6 sticky top-0 z-30">
       
@@ -8,12 +14,16 @@ const Header = ({ setIsOpen }) => {
       <div className="flex items-center gap-4">
      
 
-        <h1 className="font-semibold text-lg">Dashboard</h1>
+        <div className="flex items-center gap-2 mb-2">
+          <img src={assets.logo_axa} alt="AXA" className="h-10" />
+          <div className="w-px h-10 bg-gray-700" />
+          <img src={assets.logo_cnaas} alt="CNAAS" className="h-10" />
+        </div>
       </div>
 
       {/* Right */}
       <div className="flex items-center gap-4">
-        <span className="text-sm text-gray-600">Moustapha</span>
+        <span className="text-sm text-gray-600">{currentUser?.firstName} {currentUser?.lastName}</span>
 
         <img
           src="https://i.pravatar.cc/40"

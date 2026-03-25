@@ -1,8 +1,9 @@
 import { useState } from "react"
 import Sidebar from "./Sidebar"
 import Header from "./Header"
+import { Outlet } from "react-router-dom"
 
-const Layout = ({ children }) => {
+const Layout = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -13,7 +14,7 @@ const Layout = ({ children }) => {
         <Header setIsOpen={setIsOpen} />
 
         <main className="p-6 bg-gray-100 min-h-screen">
-          {children}
+         <Outlet />
         </main>
       </div>
     </div>

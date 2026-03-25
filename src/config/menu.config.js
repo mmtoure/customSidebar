@@ -1,3 +1,4 @@
+import { Users2 } from "lucide-react"
 import { HomeIcon, User2, Settings, Shield } from "lucide-react"
 
 export const menuConfig = [
@@ -7,18 +8,24 @@ export const menuConfig = [
     icon: HomeIcon,
   },
   {
-    label: "Profile",
-    path: "/profile",
+    label: "Assurés",
+    path: "/insureds",
     icon: User2,
   },
   {
-    label: "Settings",
-    path: "/settings",
-    icon: Settings,
+    label: "Groupements",
+    path: "/groups",
+    icon: Users2,
   },
   {
-    label: "Admin",
-    path: "/admin",
+    label: "Contrats",
+    path: "/contracts",
+    icon: Shield,
+  },
+
+  {
+    label: "Sinistres",
+    path: "/sinistres",
     icon: Shield,
   },
 ]
