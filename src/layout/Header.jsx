@@ -1,7 +1,5 @@
 import { Menu } from "lucide-react"
 import { assets } from "../assets/assets"
-import { useDispatch } from "react-redux"
-import { useGetMeQuery } from "../features/auth/authApi"
 import { useCurrentuser } from "../features/auth/hooks/useCurrentUser"
 
 const Header = () => {
